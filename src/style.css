@@ -2,7 +2,7 @@
   font-family: "Charles Wright Bold";
   font-style: normal;
   font-weight: normal;
-  src: local("Charles Wright Bold"), url(CharlesWright-Bold.woff) format("woff");
+  src: local("Charles Wright Bold"), url(assets/CharlesWright-Bold.woff) format("woff");
 }
 
 .reg {
@@ -81,4 +81,15 @@ input[type="file"] {
   width: 50%;
   top: 50vh;
   left: 25%;
+}
+
+#video {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  z-index: 10;
+  background-color: lightgray;
 }

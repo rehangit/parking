@@ -1,7 +1,7 @@
 var submitted = false;
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").then(function() {
+  navigator.serviceWorker.register("./parking-sw.js").then(function() {
     console.log("Service Worker Registered");
   });
 } else {
@@ -192,16 +192,21 @@ function selectLocation(elem) {
 }
 
 function captureImage(elem) {
-  navigator.getUserMedia({ video: true }, console.log, console.log);
-
-  // navigator.mediaDevices
-  //   .getUserMedia({ video: true })
-  //   .then(gotMedia)
-  //   .catch(error => console.error("getUserMedia() error:", error));
+  navigator.mediaDevices
+    .getUserMedia({ video: true })
+    .then(gotMedia)
+    .catch(error => console.error("getUserMedia() error:", error));
 
   function gotMedia(mediaStream) {
-    const mediaStreamTrack = mediaStream.getVideoTracks()[0];
-    const imageCapture = new ImageCapture(mediaStreamTrack);
-    console.log(imageCapture);
+    // const mediaStreamTrack = mediaStream.getVideoTracks()[0];
+    // const imageCapture = new ImageCapture(mediaStreamTrack);
+    const video = document.getElementById("video");
+    if (video) {
+      video.style.left = 0;
+      video.srcObject = mediaStream;
+      // console.log(imageCapture);
+    } else {
+      console.log("video not available");
+    }
   }
 }
