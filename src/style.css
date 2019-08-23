@@ -2,7 +2,7 @@
   font-family: "Charles Wright Bold";
   font-style: normal;
   font-weight: normal;
-  src: local("Charles Wright Bold"), url(CharlesWright-Bold.woff) format("woff");
+  src: local("Charles Wright Bold"), url(assets/CharlesWright-Bold.woff) format("woff");
 }
 .reg {
   display: inline-block;
