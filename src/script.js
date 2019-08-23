@@ -1,9 +1,11 @@
 var submitted = false;
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("parking-sw.js").then(function() {
+  navigator.serviceWorker.register("sw.js").then(function() {
     console.log("Service Worker Registered");
   });
+} else {
+  console.log("Service worker NOT registered");
 }
 
 function doUppercase() {
@@ -187,4 +189,19 @@ function selectLocation(elem) {
   const selectedArea = document.querySelectorAll(".imagemap map area")[index - 1];
   console.log(elem.selectedIndex, selectedArea);
   adjustHighlight(selectedArea);
+}
+
+function captureImage(elem) {
+  navigator.getUserMedia({ video: true }, console.log, console.log);
+
+  // navigator.mediaDevices
+  //   .getUserMedia({ video: true })
+  //   .then(gotMedia)
+  //   .catch(error => console.error("getUserMedia() error:", error));
+
+  function gotMedia(mediaStream) {
+    const mediaStreamTrack = mediaStream.getVideoTracks()[0];
+    const imageCapture = new ImageCapture(mediaStreamTrack);
+    console.log(imageCapture);
+  }
 }
