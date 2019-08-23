@@ -74,15 +74,13 @@
               placeholder="AB12 CDE"
               onkeyup="doUppercase()"
             />
-            <label class="form-control reg reg-capture" for="capture">
+            <div
+              class="btn btn-secondary reg reg-capture"
+              id="capture"
+              onclick="captureImage(this)"
+            >
               <i class="fa fa-camera"></i>
-              <input
-                type="file"
-                accept="image/*"
-                id="capture"
-                onchange="recognizeReg(this)"
-              />
-            </label>
+            </div>
           </div>
         </div>
         <div class="form-group">
