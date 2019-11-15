@@ -50,11 +50,13 @@ function selectPrayerTime() {
     });
 }
 window.onload = function(e) {
-  document.getElementsByName("image-map")[0].addEventListener("click", function(e) {
-    const location = document.getElementsByName("Location")[0];
-    location.selectedIndex = e.target.title;
-    adjustHighlight(e.target);
-  });
+  document
+    .getElementsByName("image-map")[0]
+    .addEventListener("click", function(e) {
+      const location = document.getElementsByName("Location")[0];
+      location.selectedIndex = e.target.title;
+      adjustHighlight(e.target);
+    });
 
   selectPrayerTime();
 };
@@ -186,13 +188,19 @@ function adjustHighlight(selectedArea) {
 
 function selectLocation(elem) {
   const index = elem.selectedIndex;
-  const selectedArea = document.querySelectorAll(".imagemap map area")[index - 1];
+  const selectedArea = document.querySelectorAll(".imagemap map area")[
+    index - 1
+  ];
   console.log(elem.selectedIndex, selectedArea);
   adjustHighlight(selectedArea);
 }
 
 function captureImage(elem) {
-  navigator.getUserMedia({ video: true }, console.log, console.log);
+  navigator.getUserMedia(
+    { video: true, facingMode: "environment" },
+    console.log,
+    console.log
+  );
 
   // navigator.mediaDevices
   //   .getUserMedia({ video: true })
