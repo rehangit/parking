@@ -7,7 +7,7 @@
   ],
   "body": [
     {
-      "pattern": "Please describe your pull request",
+      "pattern": "^(?!Please describe your pull request)",
       "message": "Please replace the default description."
     }
   ]
