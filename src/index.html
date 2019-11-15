@@ -12,8 +12,6 @@
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
@@ -74,28 +72,32 @@
               placeholder="AB12 CDE"
               onkeyup="doUppercase()"
             />
-            <label class="form-control reg reg-capture" for="capture">
+            <div
+              class="btn btn-secondary reg reg-capture"
+              id="capture"
+              onclick="captureImage(this)"
+            >
               <i class="fa fa-camera"></i>
-              <input
-                type="file"
-                accept="image/*"
-                id="capture"
-                onchange="recognizeReg(this)"
-              />
-            </label>
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label>Location: </label>
           <div class="input-group">
-            <select class="form-control" name="Location" onchange="selectLocation(this)">
+            <select
+              class="form-control"
+              name="Location"
+              onchange="selectLocation(this)"
+            >
               <option selected disabled hidden value=""></option>
               <option value="(1) In front">(1) In front</option>
               <option value="(2) Opposite side">(2) Opposite side</option>
               <option value="(3) Opposite near Robbin hd Way"
                 >(3) Opposite near Robbin hd Way</option
               >
-              <option value="(4) Edge of Drew Gardens">(4) Edge of Drew Gardens</option>
+              <option value="(4) Edge of Drew Gardens"
+                >(4) Edge of Drew Gardens</option
+              >
               <option value="(5) Corner of Horsenden Lane turn"
                 >(5) Corner of Horsenden Lane turn</option
               >
@@ -105,7 +107,11 @@
               >
             </select>
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" onclick="showMap()">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                onclick="showMap()"
+              >
                 <i class="fa fa-map-pin"></i>
               </button>
             </div>
@@ -118,13 +124,55 @@
             />
 
             <map name="image-map" size="562,834">
-              <area alt="1" title="1" nohref coords="298,426,30" shape="circle" />
-              <area alt="2" title="2" nohref coords="361,418,33" shape="circle" />
-              <area alt="3" title="3" nohref coords="420,529,33" shape="circle" />
-              <area alt="4" title="4" nohref coords="259,306,31" shape="circle" />
-              <area alt="5" title="5" nohref coords="152,198,34" shape="circle" />
-              <area alt="6" title="6" nohref coords="132,132,34" shape="circle" />
-              <area alt="7" title="7" nohref coords="137,354,52" shape="circle" />
+              <area
+                alt="1"
+                title="1"
+                nohref
+                coords="298,426,30"
+                shape="circle"
+              />
+              <area
+                alt="2"
+                title="2"
+                nohref
+                coords="361,418,33"
+                shape="circle"
+              />
+              <area
+                alt="3"
+                title="3"
+                nohref
+                coords="420,529,33"
+                shape="circle"
+              />
+              <area
+                alt="4"
+                title="4"
+                nohref
+                coords="259,306,31"
+                shape="circle"
+              />
+              <area
+                alt="5"
+                title="5"
+                nohref
+                coords="152,198,34"
+                shape="circle"
+              />
+              <area
+                alt="6"
+                title="6"
+                nohref
+                coords="132,132,34"
+                shape="circle"
+              />
+              <area
+                alt="7"
+                title="7"
+                nohref
+                coords="137,354,52"
+                shape="circle"
+              />
             </map>
             <div class="highlight"></div>
           </div>
